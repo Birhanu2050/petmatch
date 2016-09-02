@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Title: onlinepetmatchfinder
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Toshiba
+Implementation-Vendor-Id: edu.mum.cs544
+Build-Jdk: 1.8.0_91
+Implementation-URL: http://projects.spring.io/spring-boot/onlinepetmat
+ chfinder/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: edu.mum.cs544.OnlinepetmatchfinderApplication
+

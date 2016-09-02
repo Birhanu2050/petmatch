@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+ 
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+ 
+    <link href="../static/css/petcss.css"
+          th:href="@{css/petcss.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="jumbotron text-center">
+  <h1>My First Bootstrap Page</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+    <div class="jumbotron">
+        <img src="../static/images/catheader.jpg" width="1000"
+             th:src="@{images/catheader.jpg}"/>
+        <h1>Pet Match Finder</h1>
+ 
+        <h2>You Right Choice!!!</h2>
+    </div>
+  
+    
+</div>
+<div>
+	<h1>Result</h1>
+    <p th:text="'id: ' + ${pet.petName}" />
+    <p th:text="'content: ' + ${pet.petDescription}" />
+    <a href="/pet">Submit another message</a>
+    </div>
+</body>
+</html>

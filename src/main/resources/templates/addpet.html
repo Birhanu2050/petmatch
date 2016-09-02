@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Pet Match Finder</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+<link
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+	th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+<link href="../static/css/petcss.css" th:href="@{css/petcss.css}"
+	rel="stylesheet" media="screen" />
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Pet Match Finder</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="#">About Us</a></li>
+
+				<li><a href="#">Contact</a></li>
+				<li><a href="/pet">Click Here to register your Pet</a></li>
+			</ul>
+		</div>
+
+		<img src="../static/images/catheader.jpg" width="100%"
+			th:src="@{images/catheader.jpg}" />
+
+
+
+
+	</nav>
+
+
+
+	<div class="container">
+
+
+
+
+		<form action="#" th:action="@{/pet}" th:object="${pet}" method="post">
+
+			<div class="container-fluid">
+				<h5>Pet Information</h5>
+				<div class="row">
+					<div class="col-lg-6" style="background-color: lightblue;">
+						Pet Name:
+						<p>
+							<input type="text" th:field="*{petName}" />
+						</p>
+						
+						Description:
+						<p>
+							<input type="text" th:field="*{petDescription}" />
+						</p>
+						Date of Birth
+						<p>
+							<input type="text" th:field="*{dob}" />
+						</p>
+						
+						
+						Color<p>
+						<select th:field="*{{petColor}}">
+								<option
+									th:each="petColor : ${T(edu.mum.cs544.domain.Color).values()}"
+									th:value="${{petColor}}"
+									th:selected="${petColor == T(edu.mum.cs544.domain.Color)}"
+									th:text="${petColor}"></option>
+							</select>
+						</p>
+						
+						Gender<p>
+							<select th:field="*{{gender}}">
+								<option
+									th:each="gender : ${T(edu.mum.cs544.domain.Gender).values()}"
+									th:value="${{gender}}"
+									th:selected="${gender == T(edu.mum.cs544.domain.Gender)}"
+									th:text="${gender}"></option>
+							</select> 
+							</p>
+							
+							Pet Type
+							<p>
+							<select  th:field="*{{petType}}">
+								<option
+									th:each="petType : ${T(edu.mum.cs544.domain.PetType).values()}"
+									th:value="${{petType}}"
+									th:selected="${petType == T(edu.mum.cs544.domain.PetType)}"
+									th:text="${petType}"></option>
+							</select>
+
+
+						</p>
+					</div>
+
+					<div class="col-lg-6" style="background-color: lightblue;">
+						<h5>Address and Owner</h5>
+
+						Zip Code
+						<p>
+							<input type="text" th:field="*{petAddress.zipCode}" />
+						</p>
+						State
+						<p>
+							<input type="text" th:field="*{petAddress.state}" />
+						</p>
+
+						Country
+						<p>
+							<input type="text" th:field="*{petAddress.country}" />
+						</p>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<p>
+				<input type="submit" value="Submit" /> <input type="reset"
+					value="Reset" />
+			</p>
+		</form>
+
+
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span2">
+					<!--Sidebar content-->
+
+
+				</div>
+				<div class="span7"></div>
+			</div>
+		</div>
+
+	</div>
+
+
+</body>
+</html>

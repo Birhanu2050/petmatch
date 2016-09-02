@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Pet Match Finder</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       
+ 
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+ 
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+ 
+    <link href="../static/css/petcss.css"
+          th:href="@{css/petcss.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Pet Match Finder</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+     
+      <li><a href="#">Contact</a></li>
+       <li><a href="/pet">Click Here to register your Pet</a></li>
+    </ul>
+  </div>
+
+ <img src="../static/images/catheader.jpg" width="100%"
+             th:src="@{images/catheader.jpg}"/>
+       
+  
+
+
+</nav>
+
+
+
+<div class="container">
+<pre>
+Data sucessfully saved
+</pre>
+</div>
+
+
+</body>
+</html>
